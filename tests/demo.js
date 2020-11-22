@@ -19,11 +19,17 @@ const {
     textBox,
     evaluate,
     waitFor,
-    button
+    button,
+    below,
+    dropDown
 } = require('taiko');
 const assert = require("assert");
-const headless = process.env.headless_chrome.toLowerCase() === 'true';
 
+
+
+step("Open Chromium browser in fullscreen", async() => {
+  await openBrowser({headless: false,args: ["--start-fullscreen"]});
+});
 step("Go to URL <URL>", async(URL) => {
   await goto(URL);
 });
@@ -33,9 +39,18 @@ step("Write <text> into text input <field>", async(text, field) => {
 
 step("Click at the button <btn>", async(btn) => {
   await click(button(btn));
-  await waitFor(30000);
 });
 
 step("Click at <element>", async(element) => {
   await click(element);
 });
+
+step("Write <txt> in the input bellow <field>", async(txt, field) => {
+  await waitFor(field);
+  await write(txt, into(textBox(below(field))));
+});
+
+step("Select option <opt> in the dropdown <field>", async(opt, field) => {
+  await dropDown(field).select(opt)
+});
+

@@ -9,7 +9,7 @@ tags: CT001
 * Click at the link "Entrar"
 * Click at the link "Login"
 * Write "lucasandrade5990@gmail.com" into text input "E-mail, CPF ou CNPJ"
-* Write "Zgngz238*" into text input "Senha"
+* Write "" into text input "Senha"
 * Click at the button "ACESSAR CONTA"
 * Close the browser
 

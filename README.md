@@ -1,7 +1,13 @@
 # gauge-taiko-demo
 
-Practicing automated tests with Gauge and Taiko
+Practicing automated tests with Gauge and Taiko. To run this project just run "npm install" after cloning this repo.
 
-## 1. Start gauge project
+## How to Start gauge project
 
 1. After installing Gauge (via NPM), run: gauge init js
+
+## Problems to Fix
+
+| CT  | Step                                   | Error/Problem    |
+| --- | -------------------------------------- | ---------------- |
+| 002 | Step: Click at the link "Sign Up Here" | Error: Timed out |

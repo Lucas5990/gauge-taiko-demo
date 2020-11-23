@@ -21,14 +21,22 @@ const {
     waitFor,
     button,
     below,
-    dropDown
+    dropDown,
+    setConfig
 } = require('taiko');
 const assert = require("assert");
 
 
 
 step("Open Chromium browser in fullscreen", async() => {
-  await openBrowser({headless: true,args: ["--start-fullscreen"]});
+  await openBrowser({headless: false,args: ["--start-fullscreen"]});
+  await setConfig({
+    retryInterval: 15000,
+    observe: true,
+    waitForNavigation: false,
+    highlightOnAction: 'true',
+    navigationTimeout: 60000
+  });
 });
 step("Go to URL <URL>", async(URL) => {
   await goto(URL);
@@ -47,7 +55,12 @@ step("Click at the button <btn>", async(btn) => {
 });
 
 step("Click at the link <element>", async(element) => {
-  await click(link(element), {navigationTimeout: 60000});
+  await click(link(element));
+});
+step("Click with evaluate at the link <element>", async(element) => {
+  await evaluate(link(element), (el) => {
+    el.click();
+  })
 });
 
 step("Write <txt> in the input below <field>", async(txt, field) => {
@@ -56,7 +69,8 @@ step("Write <txt> in the input below <field>", async(txt, field) => {
 });
 
 step("Select option <opt> in the dropdown <field>", async(opt, field) => {
-  await dropDown(field).select(opt);
+  //await dropDown(field).select(opt);
+  await dropDown("TITLE").select("Mr.")
 });
 
 step("Close the browser", async() => {

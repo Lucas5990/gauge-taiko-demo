@@ -11,3 +11,10 @@ Practicing automated tests with Gauge and Taiko. To run this project just run "n
 | CT  | Step                                   | Error/Problem    |
 | --- | -------------------------------------- | ---------------- |
 | 002 | Step: Click at the link "Sign Up Here" | Error: Timed out |
+
+---
+
+## Errors and Fixes
+
+Error Message: Error: Navigation took more than 30000ms. Please increase the navigationTimeout.
+Fix: Use TAIKO's setConfig() to set the property waitForNavigation to false.

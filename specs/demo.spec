@@ -17,9 +17,8 @@ tags: CT001
 
 tags: CT002
 
-* Go to URL "http://dbankdemo.com/login"
+* Go to URL "http://dbankdemo.com"
 * Click at the link "Sign Up Here"
-//* Write "Lucas" in the input below "FIRST NAME"
-* Select option "Mr." in the dropdown "TITLE"
-* Write "lucasandrade5990@gmail.com" into text input "FIRST NAME"
+* Write "Lucas" in the input below "FIRST NAME"
 * Write "Andrade" in the input below "LAST NAME"
+* Select option "Mr." in the dropdown "TITLE"

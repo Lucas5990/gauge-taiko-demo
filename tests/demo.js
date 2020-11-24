@@ -25,11 +25,15 @@ const {
     setConfig
 } = require('taiko');
 const assert = require("assert");
+const { getDefaultSettings } = require('http2');
 
 
 
 step("Open Chromium browser in fullscreen", async() => {
-  await openBrowser({headless: false,args: ["--start-fullscreen"]});
+  await openBrowser({
+    headless: false,
+    args: ["--start-fullscreen"]
+  });
   await setConfig({
     retryInterval: 15000,
     observe: true,
@@ -69,8 +73,7 @@ step("Write <txt> in the input below <field>", async(txt, field) => {
 });
 
 step("Select option <opt> in the dropdown <field>", async(opt, field) => {
-  //await dropDown(field).select(opt);
-  await dropDown("TITLE").select("Mr.")
+  await dropDown(field).select(opt);
 });
 
 step("Close the browser", async() => {

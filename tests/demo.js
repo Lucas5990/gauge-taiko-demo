@@ -69,8 +69,7 @@ step("Write <txt> in the input below <field>", async(txt, field) => {
 });
 
 step("Select option <opt> in the dropdown <field>", async(opt, field) => {
-  //await dropDown(field).select(opt);
-  await dropDown("TITLE").select("Mr.")
+  await dropDown(field).select(opt);
 });
 
 step("Close the browser", async() => {
